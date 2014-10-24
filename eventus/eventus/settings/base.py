@@ -1,5 +1,5 @@
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+from unipath import Path
+BASE_DIR = Path(__file__).ancestor(3)
 
 SECRET_KEY = 'qy$(5xrrv&)p8s1jg-m26r(q&_u7djl=vl3eqsa6i=a*xlz==9'
 
@@ -20,6 +20,7 @@ DJANGO_APPS = (
 
 LOCAL_APPS = (
         'apps.events',
+        'apps.users',
     )
 
 THIRD_PARTY_APPS = (
@@ -47,3 +48,5 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
+AUTH_USER_MODEL = 'users.User'
