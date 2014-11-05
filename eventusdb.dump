@@ -747,6 +747,12 @@ COPY django_admin_log (id, action_time, object_id, object_repr, action_flag, cha
 14	2014-10-24 18:10:42.070572-05	4	Coderetreat 2014 - Lima en la UPC	1		7	1
 15	2014-10-24 18:13:13.741871-05	5	Fundamentos para crear páginas webs con wordpress	1		7	1
 16	2014-10-24 18:14:33.089106-05	6	Lima DevFest 2014	1		7	1
+17	2014-10-31 10:39:22.290599-05	6	Lima DevFest 2014	2	Changed imagen.	7	1
+18	2014-10-31 10:39:58.366189-05	5	Fundamentos para crear páginas webs con wordpress	2	Changed imagen.	7	1
+19	2014-10-31 10:40:17.557888-05	4	Coderetreat 2014 - Lima en la UPC	2	Changed imagen.	7	1
+20	2014-10-31 10:40:45.422138-05	3	I encuentro de ingenieros industriales	2	Changed imagen.	7	1
+21	2014-10-31 10:41:08.149566-05	2	Manejo Integral Síndrome Prader Willi	2	Changed imagen.	7	1
+22	2014-10-31 10:41:29.154051-05	1	Lo mejor de la logística	2	Changed imagen.	7	1
 \.
 
 
@@ -754,7 +760,7 @@ COPY django_admin_log (id, action_time, object_id, object_repr, action_flag, cha
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: eventususer
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 16, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 22, true);
 
 
 --
@@ -794,6 +800,7 @@ COPY django_migrations (id, app, name, applied) FROM stdin;
 5	events	0001_initial	2014-10-24 17:26:27.283082-05
 7	sessions	0001_initial	2014-10-24 17:26:29.720709-05
 9	events	0002_auto_20141024_2226	2014-10-24 18:00:23.648934-05
+10	events	0002_auto_20141030_1955	2014-10-30 15:18:15.480308-05
 \.
 
 
@@ -801,7 +808,7 @@ COPY django_migrations (id, app, name, applied) FROM stdin;
 -- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: eventususer
 --
 
-SELECT pg_catalog.setval('django_migrations_id_seq', 9, true);
+SELECT pg_catalog.setval('django_migrations_id_seq', 10, true);
 
 
 --
@@ -813,6 +820,10 @@ jq58iqmcelx6mc8nlx3xor1ifeu51b4p	NWEyNDY1M2Y1YmQ2MWM2YmM2MDJhYWU2M2U0YjFlZDIzMWM
 4v7w1yhvz09f1dh6l2bkwb93kuwo64y9	NGNkNjRkNTI1YzFkMGY2MTM4MTZhYzZhNDM0ODNmZGU4NGE4YzcwNzp7Il9hdXRoX3VzZXJfaGFzaCI6ImQ0NTZkYzA1Y2QwMjM0ZTY2YjQ0ZTEwMjMyNTYwZTBjNWZiOGM1MmMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9	2014-11-07 17:30:52.802296-05
 cmnk6x7e0jz4f9gen83js09395ti0bwn	NGNkNjRkNTI1YzFkMGY2MTM4MTZhYzZhNDM0ODNmZGU4NGE4YzcwNzp7Il9hdXRoX3VzZXJfaGFzaCI6ImQ0NTZkYzA1Y2QwMjM0ZTY2YjQ0ZTEwMjMyNTYwZTBjNWZiOGM1MmMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9	2014-11-07 17:30:57.335238-05
 38t7khg3wy13r7riy92hap2p3wfenevu	NGNkNjRkNTI1YzFkMGY2MTM4MTZhYzZhNDM0ODNmZGU4NGE4YzcwNzp7Il9hdXRoX3VzZXJfaGFzaCI6ImQ0NTZkYzA1Y2QwMjM0ZTY2YjQ0ZTEwMjMyNTYwZTBjNWZiOGM1MmMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9	2014-11-07 18:05:05.623068-05
+d9d3vz4871gf2rfasdvnj54n1ewdm95m	NWEyNDY1M2Y1YmQ2MWM2YmM2MDJhYWU2M2U0YjFlZDIzMWM2YTllYzp7fQ==	2014-11-13 15:19:03.949347-05
+7m4cd313uclopzoufqfmgfrxkxuqgley	NWEyNDY1M2Y1YmQ2MWM2YmM2MDJhYWU2M2U0YjFlZDIzMWM2YTllYzp7fQ==	2014-11-13 15:20:17.909084-05
+bvk0edv0xysbdpcpm7novdcvejcrz9qg	NWEyNDY1M2Y1YmQ2MWM2YmM2MDJhYWU2M2U0YjFlZDIzMWM2YTllYzp7fQ==	2014-11-13 15:21:45.582411-05
+snjx39tf1ek3dy3p7up85exao5iywb59	NGNkNjRkNTI1YzFkMGY2MTM4MTZhYzZhNDM0ODNmZGU4NGE4YzcwNzp7Il9hdXRoX3VzZXJfaGFzaCI6ImQ0NTZkYzA1Y2QwMjM0ZTY2YjQ0ZTEwMjMyNTYwZTBjNWZiOGM1MmMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9	2014-11-14 09:34:43.771053-05
 \.
 
 
@@ -888,12 +899,12 @@ SELECT pg_catalog.setval('events_comments_id_seq', 1, false);
 --
 
 COPY events_event (id, created, modified, name, slug, summary, content, place, start, finish, imagen, is_free, amount, views, category_id, organizer_id) FROM stdin;
-2	2014-10-24 18:07:25.849549-05	2014-10-24 18:07:25.849613-05	Manejo Integral Síndrome Prader Willi	manejo-integral-sindrome-prader-willi	Brindar información y asesoramiento acerca del manejo integral de sujetos con el Síndrome de Prader Willi.	OBJETIVO\r\nBrindar información y asesoramiento acerca del manejo integral de sujetos con el Síndrome de Prader Willi\r\nDIRIGIDO A:\r\n\r\n    Médicos generales, pediatras, neonatólogos, genetistas, endocrinólogos pediátricos, endocrinólogos de adultos, psicólogos, psicoterapeutas, psiquiatras, nutricionistas.\r\n    Familiares y cuidadores de personas con Síndrome de Prader Willi\r\n	Hotel Libertad - Los Eucaliptos 550 San Isidro	2014-11-07 05:00:00-05	2014-11-08 15:00:00-05	events/logo2.jpg	t	0.00	0	3	3
-3	2014-10-24 18:07:26.74412-05	2014-10-24 18:07:26.7442-05	I encuentro de ingenieros industriales	i-encuentro-de-ingenieros-industriales	I ENCUENTRO CON GRADUADOS DE LA CARRERA DE INGENIERÍA INDUSTRIAL DE LA UNIVERSIDAD DE LIMA 	Presentar la  trayectoria y experiencia de destacados graduados que compartirán sus reflexiones sobre los retos del presente y futuro del Ingeniero Industrial en el Perú y el Mundo.	Av. Javier Prado Este cuadra 46, Santiago de Surco	2014-10-24 14:00:00-05	2014-10-24 18:00:00-05	events/logo_P1Yqilb.jpg	t	0.00	0	1	2
-1	2014-10-24 18:02:39.459081-05	2014-10-24 18:07:41.107257-05	Lo mejor de la logística	lo-mejor-de-la-logistica	RedPartner Perú y Citrix lo invitan a conocer las tecnologías líderes del mercado.	RedPartner Perú y Citrix lo invitan a conocer las tecnologías líderes del mercado que conforman la solución de movilidad empresarial brindándole un entorno de trabajo siempre conectado aumentando la productividad y compartiendo la información de manera.	Avenida Jorge Basadre 233 piso 4, San Isidro, Lima	2014-10-29 03:00:00-05	2014-10-29 06:00:00-05	events/logo_htMGzTU.jpg	t	0.00	0	1	3
-4	2014-10-24 18:10:42.062112-05	2014-10-24 18:10:42.062166-05	Coderetreat 2014 - Lima en la UPC	coderetreat-2014-lima-en-la-upc	Evento mundial para celebrar la pasion por el software.	El Global Day of Coderetreat es un evento mundial para celebrar la pasión por el software y por el Craftmanship donde muchos desarrolladores buscan y ponen en practica sus cualidades de Artesano de Software (en contraste al Arqueologo de Software).	Santiago de Surco, Lima Region 15023 Peru	2014-11-15 05:00:00-05	2014-11-15 14:00:00-05	events/logo_1.jpg	t	0.00	0	2	3
-5	2014-10-24 18:13:13.732607-05	2014-10-24 18:13:13.732667-05	Fundamentos para crear páginas webs con wordpress	fundamentos-para-crear-paginas-webs-con-wordpress	El taller 'AprendeWordpress' es un taller presencial práctico que consta de 1 día intensivo de 3 horas. Este taller está dirigido hacia jóvenes estudiantes que deseen aprender cómo construir, crear y configurar un sitio web en internet.	\r\n\r\nEl taller 'AprendeWordpress' es un taller presencial práctico que consta de 1 día intensivo de 3 horas. Este taller está dirigido hacia jóvenes estudiantes que deseen aprender cómo construir, crear y configurar un sitio web en internet. Al finalizar el taller cada estudiante estará listo para publicar su sitio web en internet.\r\n\r\n¿Dónde? PUCP - pabellón Z - aula 412\r\n¿Cuando? Viernes 31 de Octubre 6:00pm - 9:00pm\r\n¿Costo? Gratuito para los miembros de la Red E-QUIPU.\r\n¿Qué necesito llevar? Laptop, muchas ganas de aprender y buen humor :)\r\n\r\nEste será un taller muy interactivo, y provechoso para todas aquellas personas que quieran aprender a crear una sitio web o un blog con wordpress.	Pontificia Universidad Católica	2014-10-31 13:00:00-05	2014-10-31 16:00:00-05	events/logo3-wp.png	t	0.00	0	2	3
-6	2014-10-24 18:14:33.069705-05	2014-10-24 18:14:33.069768-05	Lima DevFest 2014	lima-devfest-2014	Es Uno de los Eventos Mas Grandes del Mundo Patrocinado por Google y Organizado Por las Comunidades de Desarrollo de Google, el Evento esta Enfocado para aquellos Amantes en Desarrollo, Diseño, etc\r\n	Es Uno de los Eventos Mas Grandes del Mundo Patrocinado por Google y Organizado Por las Comunidades de Desarrollo de Google, el Evento esta Enfocado para aquellos Amantes en Desarrollo, Diseño, etc\r\n\r\nSi eres Desarrollador y eres de los AEE Personas Que les apasiona Aprender, te invitamos a Participar del Lima DevFest 2014 un realizarse el Sábado 8 en la Universidad Ricardo Palma, En Esta Ocasión el Evento ESTA SIENDO Organizado Por las 3 Comunidades de Desarrolladores de Google localizadas en Lima .	Universidad Ricardo Palma   de Lima , Lima 	2014-11-08 03:00:00-05	2014-11-08 13:30:00-05	events/logo.png	t	0.00	0	2	2
+6	2014-10-24 18:14:33.069705-05	2014-10-31 10:39:22.212752-05	Lima DevFest 2014	lima-devfest-2014	Es Uno de los Eventos Mas Grandes del Mundo Patrocinado por Google y Organizado Por las Comunidades de Desarrollo de Google, el Evento esta Enfocado para aquellos Amantes en Desarrollo, Diseño, etc\r\n	Es Uno de los Eventos Mas Grandes del Mundo Patrocinado por Google y Organizado Por las Comunidades de Desarrollo de Google, el Evento esta Enfocado para aquellos Amantes en Desarrollo, Diseño, etc\r\n\r\nSi eres Desarrollador y eres de los AEE Personas Que les apasiona Aprender, te invitamos a Participar del Lima DevFest 2014 un realizarse el Sábado 8 en la Universidad Ricardo Palma, En Esta Ocasión el Evento ESTA SIENDO Organizado Por las 3 Comunidades de Desarrolladores de Google localizadas en Lima .	Universidad Ricardo Palma   de Lima , Lima 	2014-11-08 03:00:00-05	2014-11-08 13:30:00-05	events/evento3.png	t	0.00	0	2	2
+5	2014-10-24 18:13:13.732607-05	2014-10-31 10:39:58.32723-05	Fundamentos para crear páginas webs con wordpress	fundamentos-para-crear-paginas-webs-con-wordpress	El taller 'AprendeWordpress' es un taller presencial práctico que consta de 1 día intensivo de 3 horas. Este taller está dirigido hacia jóvenes estudiantes que deseen aprender cómo construir, crear y configurar un sitio web en internet.	\r\n\r\nEl taller 'AprendeWordpress' es un taller presencial práctico que consta de 1 día intensivo de 3 horas. Este taller está dirigido hacia jóvenes estudiantes que deseen aprender cómo construir, crear y configurar un sitio web en internet. Al finalizar el taller cada estudiante estará listo para publicar su sitio web en internet.\r\n\r\n¿Dónde? PUCP - pabellón Z - aula 412\r\n¿Cuando? Viernes 31 de Octubre 6:00pm - 9:00pm\r\n¿Costo? Gratuito para los miembros de la Red E-QUIPU.\r\n¿Qué necesito llevar? Laptop, muchas ganas de aprender y buen humor :)\r\n\r\nEste será un taller muy interactivo, y provechoso para todas aquellas personas que quieran aprender a crear una sitio web o un blog con wordpress.	Pontificia Universidad Católica	2014-10-31 13:00:00-05	2014-10-31 16:00:00-05	events/evento3_IufcnS5.png	t	0.00	0	2	3
+4	2014-10-24 18:10:42.062112-05	2014-10-31 10:40:17.513128-05	Coderetreat 2014 - Lima en la UPC	coderetreat-2014-lima-en-la-upc	Evento mundial para celebrar la pasion por el software.	El Global Day of Coderetreat es un evento mundial para celebrar la pasión por el software y por el Craftmanship donde muchos desarrolladores buscan y ponen en practica sus cualidades de Artesano de Software (en contraste al Arqueologo de Software).	Santiago de Surco, Lima Region 15023 Peru	2014-11-15 05:00:00-05	2014-11-15 14:00:00-05	events/evento2.png	t	0.00	0	2	3
+3	2014-10-24 18:07:26.74412-05	2014-10-31 10:40:45.393102-05	I encuentro de ingenieros industriales	i-encuentro-de-ingenieros-industriales	I ENCUENTRO CON GRADUADOS DE LA CARRERA DE INGENIERÍA INDUSTRIAL DE LA UNIVERSIDAD DE LIMA 	Presentar la  trayectoria y experiencia de destacados graduados que compartirán sus reflexiones sobre los retos del presente y futuro del Ingeniero Industrial en el Perú y el Mundo.	Av. Javier Prado Este cuadra 46, Santiago de Surco	2014-10-24 14:00:00-05	2014-10-24 18:00:00-05	events/evento2_a0yEovu.png	t	0.00	0	1	2
+2	2014-10-24 18:07:25.849549-05	2014-10-31 10:41:08.095535-05	Manejo Integral Síndrome Prader Willi	manejo-integral-sindrome-prader-willi	Brindar información y asesoramiento acerca del manejo integral de sujetos con el Síndrome de Prader Willi.	OBJETIVO\r\nBrindar información y asesoramiento acerca del manejo integral de sujetos con el Síndrome de Prader Willi\r\nDIRIGIDO A:\r\n\r\n    Médicos generales, pediatras, neonatólogos, genetistas, endocrinólogos pediátricos, endocrinólogos de adultos, psicólogos, psicoterapeutas, psiquiatras, nutricionistas.\r\n    Familiares y cuidadores de personas con Síndrome de Prader Willi\r\n	Hotel Libertad - Los Eucaliptos 550 San Isidro	2014-11-07 05:00:00-05	2014-11-08 15:00:00-05	events/evento.png	t	0.00	0	3	3
+1	2014-10-24 18:02:39.459081-05	2014-10-31 10:41:29.095925-05	Lo mejor de la logística	lo-mejor-de-la-logistica	RedPartner Perú y Citrix lo invitan a conocer las tecnologías líderes del mercado.	RedPartner Perú y Citrix lo invitan a conocer las tecnologías líderes del mercado que conforman la solución de movilidad empresarial brindándole un entorno de trabajo siempre conectado aumentando la productividad y compartiendo la información de manera.	Avenida Jorge Basadre 233 piso 4, San Isidro, Lima	2014-10-29 03:00:00-05	2014-10-29 06:00:00-05	events/evento_HFKQ1lo.png	t	0.00	0	1	3
 \.
 
 
@@ -911,7 +922,7 @@ SELECT pg_catalog.setval('events_event_id_seq', 6, true);
 COPY users_user (id, password, last_login, is_superuser, username, email, first_name, last_name, avatar, is_active, is_staff) FROM stdin;
 2	juliogrados	2014-10-24 17:37:25-05	f	juliogrados	grados_22@hotmail.com	julio	grados	users/icon.jpg	t	f
 3	victorvillazon	2014-10-24 17:37:11-05	f	victorvillazon	victorvillazon@gmail.com	Victor	Villazón	users/home.png	t	f
-1	pbkdf2_sha256$12000$IepawdsMlqYD$NLhjDEK87fJtcIIhCSRyOsFbwepIq6W9Nakjl6bGF80=	2014-10-24 18:05:05.558572-05	t	admin	admin@gmail.com				t	t
+1	pbkdf2_sha256$12000$IepawdsMlqYD$NLhjDEK87fJtcIIhCSRyOsFbwepIq6W9Nakjl6bGF80=	2014-10-31 09:34:43.701011-05	t	admin	admin@gmail.com				t	t
 \.
 
 
