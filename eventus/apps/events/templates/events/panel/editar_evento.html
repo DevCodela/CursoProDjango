@@ -1,0 +1,97 @@
+{% extends "events/base_events.html" %}
+
+{% block title %}Panel{% endblock title %}
+
+{% block content %}
+
+    {% include "events/panel/navbar.html" %}
+
+    <div class="container">
+
+        <div class="page-header">
+            <h4>
+                <a href="{% url 'events_app:panel' %}" class="btn btn-success">
+                    <span class="glyphicon glyphicon-chevron-left"></span> Regresar
+                </a>
+                <strong>Editando: {{ event.name }}</strong>
+            </h4>
+        </div><!-- page-header -->
+
+        <div class="row">
+            
+            <div class="col-md-12">
+
+                <form role="form" action="{% url 'events_app:editar' event.id %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                    <p class="lead"><span class="glyphicon glyphicon-info-sign"></span> Ingresa los datos del evento para cambiar los datos.</p>
+
+                    {% if form.errors %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form.errors }}
+                        </div>
+                    {% endif %}
+
+                    <div class="form-group">
+                        <label>{{ form.name.label_tag }}</label>
+                        {{ form.name }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{ form.summary.label_tag }}</label>
+                        {{ form.summary }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{ form.content.label_tag }}</label>
+                        {{ form.content }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{ form.category.label_tag }}</label>
+                        {{ form.category }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{ form.place.label_tag }}</label>
+                        {{ form.place }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{ form.start.label_tag }}</label>
+                        {{ form.start }}
+                        <p class="help-block">Ingresa cuando inciará el evento. DD/MM/AA HH:MM:SS.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{ form.finish.label_tag }}</label>
+                        {{ form.finish }}
+                        <p class="help-block">Ingresa cuando finalizará el evento. DD/MM/AA HH:MM:SS.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{ form.imagen.label_tag }}</label>
+                        {{ form.imagen }}
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            {{ form.is_free }} {{ form.is_free.label_tag }}
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>{{ form.amount.label }}</label>
+                        {{ form.amount }}
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Guardar evento</button>
+                    </div>
+                </form>
+
+            </div><!-- col-md-12 -->
+
+        </div><!-- /row -->
+
+    </div><!-- /container -->
+
+{% endblock content %}

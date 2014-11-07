@@ -1,5 +1,5 @@
 body {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .jumbotron {
@@ -19,6 +19,10 @@ body {
 
 .contenedor-eventos {
     margin-top: 15px
+}
+
+.equal {
+    height: 340px;
 }
 
 @media screen and (max-width: 480px) {
