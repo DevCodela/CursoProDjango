@@ -1,0 +1,67 @@
+{% extends "events/base_events.html" %}
+
+{% block title %}Panel{% endblock title %}
+
+{% block content %}
+
+    {% include "events/panel/navbar.html" %}
+
+    <div class="container">
+
+        <div class="page-header">
+            <h4>
+                <a href="{% url 'events_app:panel' %}" class="btn btn-success">
+                    <span class="glyphicon glyphicon-chevron-left"></span> Regresar
+                </a>
+                <strong>Evento: {{ event.name }}</strong>
+            </h4>
+        </div><!-- page-header -->
+
+        <div class="row">
+            
+            <div class="col-md-3 text-center">
+                <img src="{{ event.imagen.url }}" alt="{{ event.name }}" class="img-rounded">
+            </div>
+
+            <div class="col-md-9">
+
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td>{{ event.name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Category</th>
+                            <td>{{ event.category }}</td>
+                        </tr>
+                        <tr>
+                            <th>Content</th>
+                            <td>{{ event.content }}</td>
+                        </tr>
+                        <tr>
+                            <th>Start / Finish</th>
+                            <td>{{ event.start }} / {{ event.finish }}</td>
+                        </tr>
+                        <tr>
+                            <th>Place</th>
+                            <td>{{ event.place }}</td>
+                        </tr>
+                        <tr>
+                            <th>Amount</th>
+                            {% if event.is_free %}
+                                <td><span class="label label-default">Gratuito</span></td>
+                            {% else %}
+                                <td><span class="label label-info">S/. {{ event.amount }}</span></td>
+                            {% endif %}
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div><!-- col-md-12 -->
+
+        </div><!-- /row -->
+
+    </div><!-- /container -->
+
+{% endblock content %}

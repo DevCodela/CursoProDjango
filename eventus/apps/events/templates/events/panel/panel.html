@@ -1,0 +1,68 @@
+{% extends "events/base_events.html" %}
+
+{% block title %}Panel{% endblock title %}
+
+{% block content %}
+
+    {% include "events/panel/navbar.html" %}
+
+    <div class="container">
+
+        <div class="page-header">
+            <h4>
+                <strong>Tienes <span class="label label-warning">{{ cantidad }}</span> Eventos disponibles </strong>
+                <a class="btn btn-primary pull-right" href="{% url 'events_app:nuevo' %}">
+                    <span class="glyphicon glyphicon-plus"></span> Crear un evento nuevo
+                </a>
+            </h4>
+        </div><!-- page-header -->
+
+        <div class="row">
+            
+            <div class="col-md-12">
+                
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Nombre del evento</th>
+                            <th>Categoría</th>
+                            <th>Inicio</th>
+                            <th>Fin</th>
+                            <th>Monto</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for event in events %}
+                        <tr>
+                            <td>
+                                <img src="{{ event.imagen.url }}" alt="{{ event.name }}" width="60" class="img-rounded">
+                            </td>
+                            <td>{{ event.name }}</td>
+                            <td>{{ event.category }}</td>
+                            <td>{{ event.start }}</td>
+                            <td>{{ event.finish }}</td>
+                            <td>
+                                {% if event.is_free %}
+                                    <span class="label label-default">Gratuito</span>
+                                {% else %}
+                                    <span class="label label-info">S/. {{ event.amount }}</span>
+                                {% endif %}
+                            </td>
+                            <td class="text-right">
+                                <a href="{% url 'events_app:detalle' event.id %}" class="btn btn-success"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a href="{% url 'events_app:editar' event.id %}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="{% url 'events_app:eliminar' event.id %}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div><!-- col-md-12 -->
+
+        </div><!-- /row -->
+
+    </div><!-- /container -->
+
+{% endblock content %}

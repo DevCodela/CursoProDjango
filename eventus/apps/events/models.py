@@ -40,8 +40,8 @@ class Event(TimeStampModel):
 	imagen = models.ImageField(upload_to = 'events')
 	is_free = models.BooleanField(default=True)
 	amount = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
-	views = models.PositiveIntegerField(default=0)
-	organizer = models.ForeignKey(settings.AUTH_USER_MODEL)
+	views = models.PositiveIntegerField(default=0, blank=True, null=True)
+	organizer = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
 
 	def save(self, *args, **kwargs):
 		if not self.id:
