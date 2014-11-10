@@ -2,3 +2,4 @@ django==1.7
 Unipath==1.0
 Pillow==2.6.1
 psycopg2==2.5.4
+tablib==0.10.0
