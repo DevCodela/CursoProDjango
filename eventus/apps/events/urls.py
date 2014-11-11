@@ -1,13 +1,14 @@
 from django.conf.urls import patterns, url
+from .views import IndexView, MainPanelView, CreateEvent, EventDetail, EventEdit, EventDelete
 
 urlpatterns = patterns('',
-    url(r'^$', 'apps.events.views.index', name='index'),
+    url(r'^$', IndexView.as_view(), name='index'),
 
     url(r'^login/$', 'apps.events.views.login', name='login'),
     
-    url(r'^panel/$', 'apps.events.views.main_panel', name='panel'),
-    url(r'^panel/evento/nuevo/$', 'apps.events.views.crear_evento', name='nuevo'),
-    url(r'^panel/evento/(?P<evento_id>\d+)/$', 'apps.events.views.detalle_evento', name='detalle'),
-    url(r'^panel/evento/editar/(?P<evento_id>\d+)$', 'apps.events.views.editar_evento', name='editar'),
-    url(r'^panel/evento/eliminar/(?P<evento_id>\d+)$', 'apps.events.views.eliminar_evento', name='eliminar'),
+    url(r'^panel/$', MainPanelView.as_view(), name='panel'),
+    url(r'^panel/evento/nuevo/$', CreateEvent.as_view(), name='nuevo'),
+    url(r'^panel/evento/(?P<pk>\d+)/$', EventDetail.as_view(), name='detalle'),
+    url(r'^panel/evento/editar/(?P<pk>\d+)$', EventEdit.as_view(), name='editar'),
+    url(r'^panel/evento/eliminar/(?P<pk>\d+)$', EventDelete.as_view(), name='eliminar'),
 )

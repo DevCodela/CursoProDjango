@@ -4,7 +4,7 @@ from .models import Event
 class EventoForm(forms.ModelForm):
     class Meta:
         model = Event
-        exclude = ('views','organizer','created','modified',)
+        exclude = ('views','created','modified',)
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'summary': forms.Textarea(attrs={'class': 'form-control', 'rows': '2'}),
