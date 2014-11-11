@@ -25,6 +25,10 @@ body {
     height: 340px;
 }
 
+.line {
+    border-right: 1px solid #eee;
+}
+
 @media screen and (max-width: 480px) {
     .categorias .btn-fix {
         margin-top: 7px;
