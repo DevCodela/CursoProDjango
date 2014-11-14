@@ -7,9 +7,9 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'eventusdb',
-        'USER': 'eventususer',
-        'PASSWORD': '123456',
+        'NAME': 'eventusdbprod',
+        'USER': 'eventususerprod',
+        'PASSWORD': 'eventus',
         'HOST': 'localhost',
         'PORT': '5432',
     }

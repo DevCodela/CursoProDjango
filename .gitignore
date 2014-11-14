@@ -58,3 +58,5 @@ eventus/apps/events/migrations/
 eventus/apps/events/migrations/*
 eventus/apps/users/migrations/
 eventus/apps/users/migrations/*
+eventus/manage.py
+eventus/eventus/wsgi.py
