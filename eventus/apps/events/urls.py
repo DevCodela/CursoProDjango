@@ -3,8 +3,6 @@ from .views import IndexView, MainPanelView, CreateEvent, EventDetail, EventEdit
 
 urlpatterns = patterns('',
     url(r'^$', IndexView.as_view(), name='index'),
-
-    url(r'^login/$', 'apps.events.views.login', name='login'),
     
     url(r'^panel/$', MainPanelView.as_view(), name='panel'),
     url(r'^panel/evento/nuevo/$', CreateEvent.as_view(), name='nuevo'),

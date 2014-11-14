@@ -3,12 +3,6 @@ BASE_DIR = Path(__file__).ancestor(3)
 
 SECRET_KEY = 'qy$(5xrrv&)p8s1jg-m26r(q&_u7djl=vl3eqsa6i=a*xlz==9'
 
-DEBUG = True
-
-TEMPLATE_DEBUG = True
-
-ALLOWED_HOSTS = []
-
 DJANGO_APPS = (
         'django.contrib.admin',
         'django.contrib.auth',

@@ -6,11 +6,6 @@ from .forms import EventoForm
 
 from django.core.urlresolvers import reverse, reverse_lazy
 
-
-def login(request):
-    return render(request, "users/login.html", {})
-
-
 # def index(request):
 #     events = Event.objects.all().order_by('-created')[:6]
 #     categories = Category.objects.all()
@@ -36,7 +31,7 @@ class MainPanelView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(MainPanelView, self).get_context_data(**kwargs)
-        context['events'] = Event.objects.filter(organizer__username='victorvillazon').order_by('is_free', '-created')
+        context['events'] = Event.objects.filter(organizer = self.request.user ).order_by('is_free', '-created')
         context['cantidad'] = context['events'].count()
         return context
 
@@ -70,7 +65,7 @@ class CreateEvent(CreateView):
     success_url = reverse_lazy('events_app:panel')
 
     def form_valid(self, form):
-        form.instance.organizer = User.objects.get(pk=3)
+        form.instance.organizer = self.request.user
         return super(CreateEvent, self).form_valid(form)
 
 
@@ -94,7 +89,7 @@ class EventEdit(UpdateView):
     form_class = EventoForm
 
     def form_valid(self, form):
-        form.instance.organizer = User.objects.get(pk=3)
+        form.instance.organizer = self.request.user
         return super(EventEdit, self).form_valid(form)
 
 

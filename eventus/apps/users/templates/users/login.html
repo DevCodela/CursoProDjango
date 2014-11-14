@@ -29,31 +29,36 @@
                     
                     <hr>
 
-                    <form role="form">
+                    <form role="form" method="POST">{% csrf_token %}
                         <p class="text-center">Registrate y empieza a crear y compartir tus eventos:</p>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ingresa un nombre de usuario">
+                            {{ user_register.username }}
+                            {{ user_register.username.errors }}
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ingresa una constraseña">
+                            {{ user_register.email }}
+                            {{ user_register.email.errors }}
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Ingresa un email">
+                            {{ user_register.password }}
+                            {{ user_register.password.errors }}
                         </div>
-                        <button type="submit" class="btn btn-success btn-lg btn-block">Sign up</button>
+                        <button type="submit" name="register_form" class="btn btn-success btn-lg btn-block">Sign up</button>
                     </form>
                 </div><!-- col-md-6 -->
 
                 <div class="col-md-push-3 col-md-3 text-left">
-                    <form role="form">
+                    <form role="form" method="POST">{% csrf_token %}
                         <p class="text-center">Ingresa tus credenciales y accede al sistema web</p>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ingresa tu nombre usuario">
+                            {{ login_form.username }}
+                            {{ login_form.username.errors }}
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Escribe una contraseña">
+                            {{ login_form.password }}
+                            {{ login_form.password.errors }}
                         </div>
-                        <button type="submit" class="btn btn-success btn-lg btn-block">Log in</button>
+                        <button type="submit" name="login_form" class="btn btn-success btn-lg btn-block">Log in</button>
                     </form>
                 </div><!-- col-md-6 -->
 
