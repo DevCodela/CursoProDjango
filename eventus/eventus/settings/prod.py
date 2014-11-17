@@ -19,11 +19,10 @@ INSTALLED_APPS = INSTALLED_APPS + (
 		'storages',
 	)	
 
-AWS_STORAGE_BUCKET_NAME = 'cursoprodjango'
+AWS_STORAGE_BUCKET_NAME = 'pruebaejemplo'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-AWS_ACCESS_KEY_ID = 'AKIAIZ2L6GXFNKJYHJMQ'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIAJ7EJPWBZ2PNLUFBA'
+AWS_SECRET_ACCESS_KEY = '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'
 
 STATIC_URL = 'https://s3.amazonaws.com/cursoprodjango/'
 MEDIA_URL = 'https://s3.amazonaws.com/cursoprodjango/'
