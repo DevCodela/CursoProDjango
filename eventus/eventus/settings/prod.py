@@ -1,8 +1,8 @@
 from .base import *
 
-DEBUG = True
-TEMPLATE_DEBUG = True
-ALLOWED_HOSTS = []
+DEBUG = False
+TEMPLATE_DEBUG = False
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
@@ -15,8 +15,16 @@ DATABASES = {
     }
 }
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR.child('staticfiles')
+INSTALLED_APPS = INSTALLED_APPS + (
+		'storages',
+	)	
 
-MEDIA_URL = '/media/'
+AWS_STORAGE_BUCKET_NAME = 'cursoprodjango'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = 'AKIAIZ2L6GXFNKJYHJMQ'
+AWS_SECRET_ACCESS_KEY = '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'
+
+STATIC_URL = 'https://s3.amazonaws.com/cursoprodjango/'
+MEDIA_URL = 'https://s3.amazonaws.com/cursoprodjango/'
+
 MEDIA_ROOT = BASE_DIR.child('media')
